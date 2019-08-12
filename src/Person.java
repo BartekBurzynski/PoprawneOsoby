@@ -5,13 +5,9 @@ public class Person {
     private int pesel;
 
     public Person(String firstName, String lastName, int age, int pesel) throws NameUndefinedException, IncorrectAgeException {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.age = age;
-        this.pesel = pesel;
-
         if (firstName == null||firstName.length() < 2) {
-            throw new NumberFormatException();
+            throw new NameUndefinedException();
+
         }
         if (lastName == null||lastName.length() < 2) {
             throw new NameUndefinedException();
@@ -21,6 +17,13 @@ public class Person {
             throw new IncorrectAgeException();
         }
 
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.pesel = pesel;
+
+
+
 
     }
 
@@ -28,7 +31,10 @@ public class Person {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
+    public void setFirstName(String firstName) throws NameUndefinedException {
+        if (firstName == null||firstName.length() < 2) {
+            throw new NameUndefinedException();
+        }
         this.firstName = firstName;
     }
 
@@ -36,7 +42,10 @@ public class Person {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    public void setLastName(String lastName) throws NameUndefinedException {
+        if (lastName == null||lastName.length() < 2) {
+            throw new NameUndefinedException();
+        }
         this.lastName = lastName;
     }
 
@@ -44,7 +53,10 @@ public class Person {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(int age) throws IncorrectAgeException {
+        if (age < 1) {
+            throw new IncorrectAgeException();
+        }
         this.age = age;
     }
 

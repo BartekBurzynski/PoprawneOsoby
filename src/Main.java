@@ -12,9 +12,10 @@ public class Main {
         try {
             person = new Person(input.nextLine(),input.nextLine(),input.nextInt(),input.nextInt());
         } catch (NameUndefinedException e) {
-            e.printStackTrace();
+            System.out.println("Nieprawidłowe imię");;
         } catch (IncorrectAgeException e) {
-            e.printStackTrace();
+            System.out.println("Nieprawidłowy wiek");;
+
         }
 
         System.out.println(person);
