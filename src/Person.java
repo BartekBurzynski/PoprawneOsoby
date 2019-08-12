@@ -25,7 +25,7 @@ public class Person {
 
     public void setFirstName(String firstName) throws NameUndefinedException {
         if (firstName == null||firstName.length() < 2) {
-            throw new NameUndefinedException("Nieprawidłowe imię lub nazwisko");
+            throw new NameUndefinedException("Nieprawidłowe imię");
         }
         this.firstName = firstName;
     }
@@ -36,7 +36,7 @@ public class Person {
 
     public void setLastName(String lastName) throws NameUndefinedException {
         if (lastName == null||lastName.length() < 2) {
-            throw new NameUndefinedException("Nieprawidłowe imię lub nazwisko");
+            throw new NameUndefinedException("Nieprawidłowe nazwisko");
         }
         this.lastName = lastName;
     }
