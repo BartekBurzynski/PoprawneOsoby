@@ -16,7 +16,7 @@ public class Person {
         this.age = age;
         this.pesel = pesel;
 
-        
+
     }
 
     public String getFirstName() {

@@ -11,11 +11,8 @@ public class Main {
         Person person = null;
         try {
             person = new Person(input.nextLine(),input.nextLine(),input.nextInt(),input.nextInt());
-        } catch (NameUndefinedException e) {
+        } catch (NameUndefinedException | IncorrectAgeException e) {
             System.out.println(e.getMessage());
-        } catch (IncorrectAgeException e) {
-            System.out.println(e.getMessage());
-
         }
 
         System.out.println(person);
